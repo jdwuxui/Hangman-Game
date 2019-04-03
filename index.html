@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- CSS RESET --> 
+    <link rel="cssreset" type="text/css" href="./assets/css/reset.css">  
+
+    <!-- BS4 CSS --> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>Word Guess Game</title>
 </head>
 <body>
-    <h1>Word Guess Game></h1>
+    <div class="container-fluid">
+        <h1>Word Guess Game></h1>
 
-    <p id="instruction-text"></p>
+        <br>
+        <p id="instruction-text">Guess the word or the little stickman gets it.</p>
+        <p id="player-letter-choice"></p>
+        <p id="wrong-letters"></p>
+        <p id="remaining-guesses"></p>
+        <p id="wins-count"></p>
+        <p id="loss-count"></p>
+    </div>
 
 <script>
     // Create an array of words the computer will choose randomly. 
@@ -17,11 +32,15 @@
 
     var currentWord=word[Math.floor(Math.random() * word.length)] 
     console.log(currentWord); 
+
     var currentWord = word.pop();
     console.log(currentWord);
     // confimed working ^^^
 
-     // console.log(currentWord);
+
+
+
+    // console.log(currentWord);
 var letterArray = currentWord.split("");
 // console.log(currentWord.split(""));
 for (i = 0; i < letterArray.length; i++) {
