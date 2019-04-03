@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <h1>Word Guess Game></h1>
+        <h1>Word Guess Game</h1>
 
         <br>
         <p id="instruction-text">Guess the word or the little stickman gets it.</p>
@@ -30,24 +30,49 @@
     // Create an array of words the computer will choose randomly. 
     var word = ["elephant", "tiger", "monkey", "bear", "lion", "penguin", "snake", "buffalo"];
 
+    // Create variables to hold wins 
+    var wins = 0;    
+    // Create variable to hold losses
+    var losses = 0;
+    // Create variable to hold letters guessed
+    var lettersGuessed = 8;
+    // Create variable to hold wrong guesses
+    var wrongLetters = [];
+    // Create variable to hold guesses remaining
+    var guessesRemaining = 8; 
+
+    // Variables for HTML divs with id's.
+    var instructionsText = document.getElementById("instruction-text");
+    var playerChoiceText = document.getElementById("player-letter-choice");
+    var RemainingGuessText = document.getElementById("remaining-guesses");
+    var lossesText = document.getElementById("loss-count");
+    var winsText = document.getElementById("wins-count");
+    var wrongGuessesText = document.getElementById("wrong-letters");
+    var computerWordText = document.getElementById("computer-word");
+
+    
+    
+    
+
+    // Have computer randomly choose word. 
     var currentWord=word[Math.floor(Math.random() * word.length)] 
     console.log(currentWord); 
 
     var currentWord = word.pop();
     console.log(currentWord);
+    
     // confimed working ^^^
 
+    // console.log(currentWord); 
+    var letterArray = currentWord.split(""); 
+    
+    // console.log(currentWord.split("")); 
+    for (i = 0; i < letterArray.length; i++) {
 
+    var letter = document.createElement("div");
+    letter.textContent = (letterArray[i]);
 
-
-    // console.log(currentWord);
-var letterArray = currentWord.split("");
-// console.log(currentWord.split(""));
-for (i = 0; i < letterArray.length; i++) {
-
-   var letter = document.createElement("div");
-   letter.textContent = (letterArray[i]);
-   // console.log(letter);
+    // console.log(letter);
     var x=document.getElementById("word").appendChild(letter);
    letter.style.opacity = 0;
    letter.style.display = "inline";
@@ -92,25 +117,7 @@ function letterMatch(userGuess) {
    }
 
 }
-
-    // Create variables to hold wins 
-    var wins = 0;
-    
-    // Create variable to hold guesses remaining
-    var losses = 0;
-
-    // Create variable to hold letters already guessed
-    var playerGuess
-
-    // Create variable to hold guesses remaining
-    var guessesLeft
-
-
-
-
-
    
-    </script>
-    
+    </script>    
 </body>
 </html>
